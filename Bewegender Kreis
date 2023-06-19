@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .circle {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #eaeaea;
+      border-top: none;
+      border-right: none;
+      border-radius: 50%;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      transition: transform 0.5s;
+    }
+
+    html.scroll .circle {
+      transform: translate(-50%, -50%) rotate(270deg);
+    }
+  </style>
+  <script>
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 0) {
+        document.documentElement.classList.add('scroll');
+      } else {
+        document.documentElement.classList.remove('scroll');
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="circle"></div>
+
+  <div style="height: 2000px; background-color: #f7f7f7;">
+    <!-- Hier kommt der restliche Inhalt der Seite -->
+  </div>
+</body>
+</html>
